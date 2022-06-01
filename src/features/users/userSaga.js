@@ -1,6 +1,5 @@
 import { delay, put, takeLatest } from 'redux-saga/effects';
-import { UserActions } from '../../constant';
-import { userActions } from './userSlice';
+import { userActions, UserActionTypes } from './userSlice';
 import userData from '../../data/users.json';
 
 function* fetchUserSaga(action) {
@@ -13,5 +12,5 @@ function* fetchUserSaga(action) {
 }
 
 export default function* userSaga() {
-    yield takeLatest(UserActions.FETCH_USER, fetchUserSaga);
+    yield takeLatest(UserActionTypes.FETCH_USER, fetchUserSaga);
 }

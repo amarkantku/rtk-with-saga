@@ -6,10 +6,9 @@ import Modal from '../../../components/Modal/Modal';
 import PlusIcon from '../../../icons/Plus';
 import { Row, Col } from '../../../styles/styled';
 import { UserListWrapper, AddNewUser, Title } from '../User.styled';
-import { userActions } from '../userSlice';
+import { userActions, defaultUser } from '../userSlice';
 
 import UserForm from '../components/UserForm';
-import { defaultUser } from '../../../constant';
 
 const UserList = ({ userData }) => {
     const dispatch = useDispatch();

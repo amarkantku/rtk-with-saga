@@ -1,5 +1,14 @@
 import { createSlice, createAction } from '@reduxjs/toolkit';
-import { UserActions } from '../../constant';
+
+export const UserActionTypes = {
+    FETCH_USER: 'users/FETCH_USER',
+};
+
+export const defaultUser = {
+    name: '',
+    email: '',
+    company: '',
+};
 
 const userSlice = createSlice({
     name: 'users',
@@ -48,5 +57,5 @@ const userSlice = createSlice({
 });
 
 export const userActions = userSlice.actions;
-export const getUsers = createAction(UserActions.FETCH_USER);
+export const getUsers = createAction(UserActionTypes.FETCH_USER);
 export const userReducer = userSlice.reducer;
