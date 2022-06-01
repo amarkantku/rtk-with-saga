@@ -1,61 +1,51 @@
 [
     {
         "name": "Bird Ramsey",
-        "gender": "male",
         "company": "NIMON",
         "email": "birdramsey@nimon.com"
     },
     {
         "name": "Lillian Burgess",
-        "gender": "female",
         "company": "LUXURIA",
         "email": "lillianburgess@luxuria.com"
     },
     {
         "name": "Kristie Cole",
-        "gender": "female",
         "company": "QUADEEBO",
         "email": "kristiecole@quadeebo.com"
     },
     {
         "name": "Leonor Cross",
-        "gender": "female",
         "company": "GRONK",
         "email": "leonorcross@gronk.com"
     },
     {
         "name": "Marsh Mccall",
-        "gender": "male",
         "company": "ULTRIMAX",
         "email": "marshmccall@ultrimax.com"
     },
     {
         "name": "Amy Slawa",
-        "gender": "female",
         "company": "JASPER",
         "email": "amyslawa@jasper.com"
     },
     {
         "name": "Andrew W. Roll",
-        "gender": "male",
         "company": "GRONK",
         "email": "andrew.w@gronk.com"
     },
     {
         "name": "Steve Johnshon",
-        "gender": "male",
         "company": "GRONK",
         "email": "steve.johnshon@gronk.com"
     },
     {
         "name": "David Hudson",
-        "gender": "male",
         "company": "JASPER",
         "email": "david.hudson@jasper.com"
     },
     {
         "name": "Kristina Martin",
-        "gender": "female",
         "company": "JASPER",
         "email": "kristina.martin@jasper.com"
     }

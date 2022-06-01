@@ -3,9 +3,15 @@ import { tableActionItems } from '../../constant';
 import EditIcon from '../../icons/Edit';
 import DeleteIcon from '../../icons/Delete';
 
-export const Table = ({ data, caption, isReadonly }) => {
-    const handleOnClick = (data, action) => {
-        console.log(data, action);
+export const Table = ({
+    id = 'table-wrapper',
+    data,
+    caption,
+    isReadonly,
+    handleClick,
+}) => {
+    const handleOnClick = (action, data) => {
+        handleClick({ data, action });
     };
     return (
         <TableMarkup
@@ -14,14 +20,22 @@ export const Table = ({ data, caption, isReadonly }) => {
             data={data}
             handleOnClick={handleOnClick}
             isReadonly={isReadonly}
+            id={id}
         />
     );
 };
 
-const TableMarkup = ({ caption, titles, data, isReadonly, handleOnClick }) => (
-    <StyledTable>
-        <caption>{caption}</caption>
-        <thead>
+const TableMarkup = ({
+    id,
+    caption,
+    titles,
+    data,
+    isReadonly,
+    handleOnClick,
+}) => (
+    <StyledTable data-testid={id}>
+        <caption data-testid={'table-caption'}>{caption}</caption>
+        <thead data-testid={'table-head'}>
             <tr>
                 {titles.map((title, index) => (
                     <th className="heading" key={index}>
@@ -31,7 +45,7 @@ const TableMarkup = ({ caption, titles, data, isReadonly, handleOnClick }) => (
                 {!isReadonly && <th>{''}</th>}
             </tr>
         </thead>
-        <tbody>
+        <tbody data-testid={'table-body'}>
             {data.map((item, index) => (
                 <tr key={index}>
                     {titles.map((title, index) => (
@@ -46,7 +60,7 @@ const TableMarkup = ({ caption, titles, data, isReadonly, handleOnClick }) => (
                                         onClick={() =>
                                             handleOnClick(action.type, item)
                                         }
-                                        data-testid="edit"
+                                        data-testid="edit-row-item"
                                         key={`${action.type}-${index}`}
                                     >
                                         <EditIcon />
@@ -59,7 +73,7 @@ const TableMarkup = ({ caption, titles, data, isReadonly, handleOnClick }) => (
                                                 item.email
                                             )
                                         }
-                                        data-testid="delete"
+                                        data-testid="delete-row-item"
                                         key={`${action.type}-${index}`}
                                     >
                                         <DeleteIcon />
@@ -73,7 +87,7 @@ const TableMarkup = ({ caption, titles, data, isReadonly, handleOnClick }) => (
                 </tr>
             ))}
         </tbody>
-        <tfoot>{/* <tr>{footer}</tr> */}</tfoot>
+        <tfoot data-testid={'table-footer'}>{/* <tr>{footer}</tr> */}</tfoot>
     </StyledTable>
 );
 

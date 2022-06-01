@@ -1,9 +1,13 @@
-import { takeLatest } from 'redux-saga/effects';
+import { delay, put, takeLatest } from 'redux-saga/effects';
+import { UserActions } from '../../constant';
+import { userActions } from './userSlice';
+import userData from '../../data/users.json';
 
-function* testUserSaga(action) {
+function* fetchUserSaga(action) {
     try {
-        yield 1;
-        console.log(action);
+        yield delay(500);
+        yield put(userActions.setUsers(userData));
+        console.log('@test in saga', action, userData);
     } catch (error) {
         yield error;
         console.log('Failed to fetch', error);
@@ -11,5 +15,5 @@ function* testUserSaga(action) {
 }
 
 export default function* userSaga() {
-    yield takeLatest('TEST_USER_SAGA', testUserSaga);
+    yield takeLatest(UserActions.FETCH_USER, fetchUserSaga);
 }

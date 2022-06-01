@@ -1,12 +1,11 @@
 const Plus = () => {
     return (
         <svg
-            height="25"
-            width="25"
-            viewBox="0 0 50 50"
+            height="24"
+            width="24"
+            viewBox="0 0 48 48"
             xmlns="http://www.w3.org/2000/svg"
         >
-            <rect fill="#ffffff" height="50" width="50" />
             <line
                 fill="none"
                 stroke="#000000"

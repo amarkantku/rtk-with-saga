@@ -17,10 +17,10 @@ export const Col = styled.div`
     flex-direction: column;
 `;
 
-export const AppContainer = styled.div`
+export const AppWrapper = styled.div`
     display: flex;
     flex-direction: column;
-    margin-top: 5%;
+    margin-top: 20px;
     width: 100%;
     scroll-behavior: smooth;
 `;
