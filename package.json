@@ -2,6 +2,7 @@
   "name": "rtk-with-saga",
   "version": "0.1.0",
   "private": true,
+  "keywords": ["React JS", "Redux", "Redux Toolkit", "Redux Saga", "Styled Component"],
   "dependencies": {
     "@reduxjs/toolkit": "^1.8.2",
     "@testing-library/jest-dom": "^5.16.4",
