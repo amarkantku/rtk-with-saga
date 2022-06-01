@@ -63,15 +63,17 @@ const UserList = ({ userData }) => {
                     </Col>
                 </Row>
                 <Row>
-                    {userData.length ? (
-                        <Table
-                            id="user-list-table"
-                            caption="User Table"
-                            data={userData}
-                            isReadonly={false}
-                            handleClick={handleUserClick}
-                        />
-                    ) : null}
+                    <Col>
+                        {userData.length ? (
+                            <Table
+                                id="user-list-table"
+                                caption="User Table"
+                                data={userData}
+                                isReadonly={false}
+                                handleClick={handleUserClick}
+                            />
+                        ) : null}
+                    </Col>
                 </Row>
             </UserListWrapper>
             {isOpen && (

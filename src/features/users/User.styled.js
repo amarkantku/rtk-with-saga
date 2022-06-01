@@ -5,6 +5,7 @@ export const UserListWrapper = styled.div`
     justify-content: center;
     flex-direction: column;
     margin: 0 auto;
+    min-width: 700px;
 `;
 
 export const AddNewUser = styled.div`

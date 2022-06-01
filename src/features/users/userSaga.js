@@ -7,10 +7,8 @@ function* fetchUserSaga(action) {
     try {
         yield delay(500);
         yield put(userActions.setUsers(userData));
-        console.log('@test in saga', action, userData);
     } catch (error) {
-        yield error;
-        console.log('Failed to fetch', error);
+        yield put(userActions.setError(error));
     }
 }
 

@@ -5,11 +5,13 @@ const userSlice = createSlice({
     name: 'users',
     initialState: {
         data: [],
+        error: null,
     },
     reducers: {
         setUsers: (state, action) => {
             return {
                 ...state,
+                error: null,
                 data: action.payload,
             };
         },
@@ -33,6 +35,13 @@ const userSlice = createSlice({
             return {
                 ...state,
                 data: [...state.data, action.payload],
+            };
+        },
+        setError: (state, action) => {
+            return {
+                ...state,
+                data: [],
+                error: action.payload,
             };
         },
     },
