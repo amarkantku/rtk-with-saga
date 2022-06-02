@@ -22,25 +22,21 @@ const UserForm = (props) => {
     return (
         <FormWrapper data-testid={'user-form-wrapper'}>
             <FormGroup>
-                <Label htmlFor="user-name">
-                    Name
-                </Label>
+                <Label htmlFor="user-name">Name</Label>
                 <Input
                     data-testid={'user-name-input'}
                     onChange={handleOnChange}
                     type={'text'}
-                    aria-label="user-name-input" 
+                    aria-label="user-name-input"
                     id="user-name"
                     value={user?.name}
                     name={'name'}
                 />
             </FormGroup>
             <FormGroup>
-                <Label htmlFor="user-company-name">
-                    Compnay
-                </Label>
+                <Label htmlFor="user-company-name">Compnay</Label>
                 <Input
-                   data-testid={'company-name-input'}
+                    data-testid={'company-name-input'}
                     onChange={handleOnChange}
                     type={'text'}
                     id="user-company-name"
@@ -49,9 +45,7 @@ const UserForm = (props) => {
                 />
             </FormGroup>
             <FormGroup>
-                <Label htmlFor="user-email">
-                    Email
-                </Label>
+                <Label htmlFor="user-email">Email</Label>
                 <Input
                     data-testid={'user-email-input'}
                     onChange={handleOnChange}
@@ -62,7 +56,11 @@ const UserForm = (props) => {
                 />
             </FormGroup>
             <FormGroup>
-                <Button data-testid={'btn-user-submit'} width={100} onClick={() => handleSubmit()}>
+                <Button
+                    data-testid={'btn-user-submit'}
+                    width={100}
+                    onClick={() => handleSubmit()}
+                >
                     Save
                 </Button>
             </FormGroup>
@@ -75,15 +73,15 @@ UserForm.defaultProps = {
         secondary: '#ccc',
         overlay: '#ccc',
         colors: {
-            black: "#000000"
-        }
+            black: '#000000',
+        },
     },
     isEdit: false,
     user: {
         name: '',
         email: '',
-        company: ''
-    }
+        company: '',
+    },
 };
 
 export default UserForm;

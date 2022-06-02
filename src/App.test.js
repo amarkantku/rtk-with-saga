@@ -1,4 +1,9 @@
-import { render, screen, fireEvent, waitForElement } from '@testing-library/react';
+import {
+    render,
+    screen,
+    fireEvent,
+    waitForElement,
+} from '@testing-library/react';
 import { Provider } from 'react-redux';
 import configureStore from 'redux-mock-store';
 import AppThemeProvider from './contexts/ThemeContext/ThemeProvider';
@@ -9,7 +14,7 @@ describe('<App /> component', () => {
         users: {
             data: [],
             error: null,
-        }
+        },
     };
     let store;
 
@@ -44,16 +49,18 @@ describe('<App /> component', () => {
 
     test('should display user list table', () => {
         const mockStore = configureStore();
-        initialState.users.data = [{
-            "name": "Bird Ramsey",
-            "company": "NIMON",
-            "email": "birdramsey@nimon.com"
-        },
-        {
-            "name": "Lillian Burgess",
-            "company": "LUXURIA",
-            "email": "lillianburgess@luxuria.com"
-        }];
+        initialState.users.data = [
+            {
+                name: 'Bird Ramsey',
+                company: 'NIMON',
+                email: 'birdramsey@nimon.com',
+            },
+            {
+                name: 'Lillian Burgess',
+                company: 'LUXURIA',
+                email: 'lillianburgess@luxuria.com',
+            },
+        ];
         store = mockStore(initialState);
         render(
             <AppThemeProvider>
@@ -76,7 +83,7 @@ describe('<App /> component', () => {
                 </Provider>
             </AppThemeProvider>
         );
-        fireEvent.click(screen.getByTestId("add-new-user"));
+        fireEvent.click(screen.getByTestId('add-new-user'));
         expect(screen.getByTestId('modal-wrapper')).toBeInTheDocument();
         expect(screen.getByTestId('modal-btn-close')).toBeInTheDocument();
         fireEvent.click(screen.getByTestId('btn-user-submit'));
@@ -84,11 +91,13 @@ describe('<App /> component', () => {
 
     test('should open edit user modal on click edit CTA', () => {
         const mockStore = configureStore();
-        initialState.users.data = [{
-            "name": "Bird Ramsey",
-            "company": "NIMON",
-            "email": "birdramsey@nimon.com"
-        }];
+        initialState.users.data = [
+            {
+                name: 'Bird Ramsey',
+                company: 'NIMON',
+                email: 'birdramsey@nimon.com',
+            },
+        ];
         store = mockStore(initialState);
         render(
             <AppThemeProvider>
@@ -109,16 +118,18 @@ describe('<App /> component', () => {
 
     test('should remove the user from the user table on Delete CTA', async () => {
         const mockStore = configureStore();
-        initialState.users.data = [{
-            "name": "Bird Ramsey",
-            "company": "NIMON",
-            "email": "birdramsey@nimon.com"
-        },
-        {
-            "name": "Lillian Burgess",
-            "company": "LUXURIA",
-            "email": "lillianburgess@luxuria.com"
-        }];
+        initialState.users.data = [
+            {
+                name: 'Bird Ramsey',
+                company: 'NIMON',
+                email: 'birdramsey@nimon.com',
+            },
+            {
+                name: 'Lillian Burgess',
+                company: 'LUXURIA',
+                email: 'lillianburgess@luxuria.com',
+            },
+        ];
         store = mockStore(initialState);
         render(
             <AppThemeProvider>

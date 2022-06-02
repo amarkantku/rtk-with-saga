@@ -10,16 +10,15 @@ describe('< /> component', () => {
     test('should change the value of name input filed', () => {
         const { getByLabelText } = render(<UserForm />);
         const input = getByLabelText('user-name-input');
-        fireEvent.change(input, {target: {value: 'Amarkant Kumar'}});
-        console.log(input.value);
-        expect(input.value).toBe('Amarkant Kumar')
+        fireEvent.change(input, { target: { value: 'Amarkant Kumar' } });
+        expect(input.value).toBe('Amarkant Kumar');
     });
 
     test('should change the value of email input filed', () => {
         const { getByTestId } = render(<UserForm />);
         const input = getByTestId('user-email-input');
-        fireEvent.change(input, {target: {value: 'test.user@test.com'}});
-        expect(input.value).toBe('test.user@test.com')
+        fireEvent.change(input, { target: { value: 'test.user@test.com' } });
+        expect(input.value).toBe('test.user@test.com');
     });
 
     test('should exist Save button', () => {

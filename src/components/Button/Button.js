@@ -9,8 +9,8 @@ Button.defaultProps = {
         secondary: '#ccc',
         overlay: '#ccc',
         colors: {
-            black: "#000000"
-        }
-    }
+            black: '#000000',
+        },
+    },
 };
 export default Button;
