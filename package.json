@@ -33,8 +33,22 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
+    "coverage": "npm test -- --coverage",
     "eject": "react-scripts eject",
     "format": "prettier --write src/**/*.{js,json}"
+  },
+  "jest": {
+    "collectCoverageFrom": [
+      "src/**/*.{js,jsx}"
+    ],
+    "coverageThreshold": {
+      "global": {
+        "statements": 85,
+        "branches": 85,
+        "functions": 85,
+        "lines": 85
+      }
+    }
   },
   "eslintConfig": {
     "extends": [
@@ -55,6 +69,7 @@
     ]
   },
   "devDependencies": {
-    "prettier": "^2.6.2"
+    "prettier": "^2.6.2",
+    "redux-mock-store": "^1.5.4"
   }
 }

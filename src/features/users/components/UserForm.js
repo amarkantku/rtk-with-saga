@@ -20,54 +20,70 @@ const UserForm = (props) => {
     };
 
     return (
-        <FormWrapper data-tesid={'user-form-wrapper'}>
+        <FormWrapper data-testid={'user-form-wrapper'}>
             <FormGroup>
-                <Label data-tesid={'user-name'} htmlFor="name">
+                <Label htmlFor="user-name">
                     Name
                 </Label>
                 <Input
-                    data-tesid={'user-name-input'}
+                    data-testid={'user-name-input'}
                     onChange={handleOnChange}
                     type={'text'}
-                    id="name"
+                    aria-label="user-name-input" 
+                    id="user-name"
                     value={user?.name}
                     name={'name'}
                 />
             </FormGroup>
             <FormGroup>
-                <Label data-tesid={'company-name'} htmlFor="company-name">
+                <Label htmlFor="user-company-name">
                     Compnay
                 </Label>
                 <Input
-                    data-tesid={'company-input'}
+                   data-testid={'company-name-input'}
                     onChange={handleOnChange}
                     type={'text'}
-                    id="company-name"
+                    id="user-company-name"
                     value={user?.company}
                     name={'company'}
                 />
             </FormGroup>
             <FormGroup>
-                <Label data-tesid={'user-email'} htmlFor="email">
+                <Label htmlFor="user-email">
                     Email
                 </Label>
                 <Input
-                    data-tesid={'email-input'}
+                    data-testid={'user-email-input'}
                     onChange={handleOnChange}
                     type={'text'}
-                    id="email"
                     readOnly={props.isEdit}
                     value={user?.email}
                     name={'email'}
                 />
             </FormGroup>
             <FormGroup>
-                <Button width={100} onClick={() => handleSubmit()}>
+                <Button data-testid={'btn-user-submit'} width={100} onClick={() => handleSubmit()}>
                     Save
                 </Button>
             </FormGroup>
         </FormWrapper>
     );
+};
+
+UserForm.defaultProps = {
+    theme: {
+        secondary: '#ccc',
+        overlay: '#ccc',
+        colors: {
+            black: "#000000"
+        }
+    },
+    isEdit: false,
+    user: {
+        name: '',
+        email: '',
+        company: ''
+    }
 };
 
 export default UserForm;
