@@ -1,7 +1,7 @@
 import { render, screen, fireEvent } from '@testing-library/react';
 import UserForm from './UserForm';
 
-describe('< /> component', () => {
+describe('<UserForm /> component', () => {
     test('should render correctly', () => {
         render(<UserForm />);
         expect(screen.getByTestId('user-form-wrapper')).toBeInTheDocument();

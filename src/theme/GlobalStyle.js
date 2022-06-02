@@ -17,7 +17,11 @@ const GlobalStyle = createGlobalStyle`
         height: 100%;
         width: 100%;
         line-height: 1.5;
-        background: ${(p) => p.theme.body};
+        
+        background: ${
+            /* istanbul ignore next */
+            (p) => p.theme.body
+        };
         font-family: "Roboto", sans-serif;
     }
 `;

@@ -32,23 +32,15 @@ const Modal = ({ title, footer, children, isOpen, handleClose }) => {
                         </ModalClose>
                     </ModalHeader>
                     <ModalBody data-testid={'modal-body'}>{children}</ModalBody>
-                    {footer && (
+                    {footer ? (
                         <ModalFooter data-testid={'modal-footer'}>
                             {footer}
                         </ModalFooter>
-                    )}
+                    ) : null}
                 </ModalContainer>
             </ModalBlock>
         </Portal>
     );
-};
-
-Modal.defaultProps = {
-    isOpen: false,
-    title: '',
-    footer: '',
-    children: '',
-    handleClose: () => {},
 };
 
 export default memo(Modal);

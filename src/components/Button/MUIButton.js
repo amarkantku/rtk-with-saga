@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
-import Button from '@mui/material/Button';
-// import Button from "./Button";
+// import Button from '@mui/material/Button';
+import Button from './Button';
 
 export default styled(({ color, children, ...otherProps }) => {
     return <Button {...otherProps}>{children}</Button>;

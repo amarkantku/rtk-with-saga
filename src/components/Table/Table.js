@@ -78,9 +78,8 @@ const TableMarkup = ({
                                     >
                                         <DeleteIcon />
                                     </span>
-                                ) : (
-                                    ''
-                                );
+                                ) : /* istanbul ignore next */
+                                null;
                             })}
                         </td>
                     )}

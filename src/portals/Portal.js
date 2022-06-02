@@ -15,6 +15,7 @@ const Portal = ({ children, id = 'portal' }) => {
         let element = document.getElementById(id);
         let isCreated = false;
 
+        /* istanbul ignore else */
         if (!element) {
             // if element is not present create and append to body
             isCreated = true;
@@ -23,7 +24,7 @@ const Portal = ({ children, id = 'portal' }) => {
         setWrapperElement(element);
 
         return () => {
-            // clean up
+            /* istanbul ignore else */
             if (isCreated && element.parentNode) {
                 element.parentNode.removeChild(element);
             }

@@ -53,6 +53,7 @@ export const Input = styled.input`
     }
     ${(props) => {
         if (props.readOnly) {
+            /* istanbul ignore next */
             return `
                 border: 1px solid ${(props) => props.theme.overlay};
                 :focus {
