@@ -9,7 +9,7 @@ import { UserListWrapper, AddNewUser, Title } from '../User.styled';
 import { userActions, defaultUser } from '../userSlice';
 
 import UserForm from '../components/UserForm';
-import MUIButton from '../../../components/Button/MUIButton';
+// import MUIButton from '../../../components/Button/MUIButton';
 
 const UserList = ({ userData }) => {
     const dispatch = useDispatch();
@@ -73,11 +73,11 @@ const UserList = ({ userData }) => {
                         ) : null}
                     </Col>
                 </Row>
-                <MUIButton color="red">Test Button</MUIButton>
+                {/* <MUIButton color="red">Test Button</MUIButton> */}
             </UserListWrapper>
             {isOpen && (
                 <Modal
-                    title={isEdit ? 'Update User Deatils' : 'Add User'}
+                    title={isEdit ? 'Update User Details' : 'Add User'}
                     handleClose={closeModal}
                     isOpen={isOpen}
                 >

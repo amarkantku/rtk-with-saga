@@ -24,6 +24,7 @@ describe('<Table /> component', () => {
         render(<Table {...defaultProps} />);
     });
     test('should render correctly', () => {
-        render(<Table />);
+        delete defaultProps.id;
+        render(<Table {...defaultProps} />);
     });
 });

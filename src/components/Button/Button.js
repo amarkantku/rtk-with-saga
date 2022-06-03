@@ -6,10 +6,10 @@ const Button = ({ children, ...restProps }) => {
 
 Button.defaultProps = {
     theme: {
-        secondary: '#ccc',
-        overlay: '#ccc',
+        secondary: '',
+        overlay: '',
         colors: {
-            black: '#000000',
+            black: '',
         },
     },
 };

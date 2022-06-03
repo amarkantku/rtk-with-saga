@@ -104,7 +104,7 @@ describe('<App /> component', () => {
         expect(screen.getByTestId('user-list-table')).toBeInTheDocument();
         fireEvent.click(screen.getByTestId('edit-row-item'));
         expect(screen.getByTestId('modal-wrapper')).toBeInTheDocument();
-        expect(screen.getByText(/Update User Deatils/i)).toBeInTheDocument();
+        expect(screen.getByText(/Update User Details/i)).toBeInTheDocument();
         expect(screen.getByTestId('modal-btn-close')).toBeInTheDocument();
         expect(screen.getByTestId('btn-user-submit')).toBeInTheDocument();
         fireEvent.click(screen.getByTestId('btn-user-submit'));
