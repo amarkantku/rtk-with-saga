@@ -7,7 +7,6 @@ export const fetchUserSaga = function* (action) {
         yield delay(500);
         yield put(userActions.setUsers(userData));
     } catch (error) {
-        /* istanbul ignore next */
         yield put(userActions.setError(error));
     }
 };
