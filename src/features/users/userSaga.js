@@ -12,7 +12,7 @@ export const fetchUserSaga = function* (action) {
     }
 };
 
- /* istanbul ignore next */
+/* istanbul ignore next */
 export default function* userSaga() {
     yield takeLatest(UserActionTypes.FETCH_USER, fetchUserSaga);
 }
