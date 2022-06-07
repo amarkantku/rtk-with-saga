@@ -5,7 +5,7 @@ describe('User saga test', () => {
         const saga = fetchUserSaga({});
         expect(saga.next().done).toBe(false);
         expect(saga.next().done).toBe(false);
-        saga.throw(new Error('Error!'))
+        saga.throw(new Error('Error!'));
         expect(saga.next().done).toBe(true);
     });
 });
